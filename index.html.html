@@ -1,0 +1,1334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sherish Khalid's Computer Science portfolio">
+  <title>Sherish Khalid | Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f7f8f3;
+      --white: #ffffff;
+      --dark: #17271f;
+      --green: #b9e86b;
+      --accent: #769b45;
+      --muted: #6b786f;
+      --line: #e0e6dc;
+      --soft: #edf2e7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    header {
+      background: rgba(247, 248, 243, 0.96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .logo-box {
+      height: 38px;
+      width: 38px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      border-radius: 11px;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #58655b;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links .contact-nav {
+      border: 1px solid #cbd7c5;
+      border-radius: 30px;
+      padding: 8px 15px;
+      color: var(--dark);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 45px;
+      padding-top: 70px;
+      padding-bottom: 75px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow span {
+      color: #7ea546;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -1.4px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5.2vw, 65px);
+      font-weight: 800;
+      margin-bottom: 23px;
+    }
+
+    h1 .name {
+      color: var(--accent);
+    }
+
+    h1 .highlight {
+      color: #91b45c;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 530px;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid #d3ddce;
+      background: white;
+    }
+
+    .small-note {
+      font-size: 11px;
+      color: #7a857b;
+      margin-top: 30px;
+    }
+
+    /* CODE ILLUSTRATION */
+    .hero-visual {
+      position: relative;
+      padding: 28px 0;
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+    }
+
+    .visual-circle {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      background: #e5efd8;
+      border: 1px solid #d5e4c6;
+    }
+
+    .code-window {
+      position: relative;
+      width: min(370px, 100%);
+      background: #17271f;
+      color: #e8f0e8;
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 22px 55px #1c30221c;
+      transform: rotate(-2deg);
+    }
+
+    .window-bar {
+      background: #263b2e;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid #394e40;
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      background: #e69f7a;
+      border-radius: 50%;
+    }
+
+    .dot:nth-child(2) {
+      background: #dddb82;
+    }
+
+    .dot:nth-child(3) {
+      background: #9ad581;
+    }
+
+    .file-name {
+      font-size: 10px;
+      color: #bbcabb;
+      margin-left: auto;
+    }
+
+    .code-lines {
+      padding: 22px 17px;
+      font: 12px/2.1 monospace;
+      overflow-x: auto;
+    }
+
+    .code-lines p {
+      white-space: nowrap;
+    }
+
+    .line-number {
+      display: inline-block;
+      width: 26px;
+      color: #829183;
+    }
+
+    .purple { color: #c5b7ff; }
+    .yellow { color: #ebdf8d; }
+    .lime { color: #a9e7a8; }
+
+    .window-footer {
+      padding: 11px 16px;
+      border-top: 1px solid #394e40;
+      color: #afc2b2;
+      font-size: 10px;
+    }
+
+    .floating-label {
+      position: absolute;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: var(--accent);
+      box-shadow: 0 8px 24px #1c302212;
+    }
+
+    .label-one {
+      top: 20px;
+      right: 0;
+      background: var(--green);
+      color: var(--dark);
+      transform: rotate(5deg);
+    }
+
+    .label-two {
+      bottom: 15px;
+      left: 0;
+      transform: rotate(-5deg);
+    }
+
+    /* QUICK FACTS */
+    .facts {
+      background: #eff3e9;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 22px 0;
+    }
+
+    .fact {
+      border-right: 1px solid #d8e0d2;
+      padding: 5px 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .fact:first-child {
+      padding-left: 0;
+    }
+
+    .fact:last-child {
+      border: none;
+    }
+
+    .fact-number {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .fact-text {
+      font-weight: 600;
+      font-size: 11px;
+      color: #47564a;
+    }
+
+    /* GENERAL SECTIONS */
+    .section {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 47px);
+      font-weight: 800;
+    }
+
+    h2 span {
+      color: var(--accent);
+    }
+
+    .section-intro {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 540px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 55px;
+    }
+
+    .about-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .about-content .lead {
+      font-size: 20px;
+      color: #35463a;
+      font-weight: 600;
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tags span {
+      padding: 7px 11px;
+      background: var(--soft);
+      color: #5b7448;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    /* SKILLS */
+    .skills-section {
+      background: #eff3e9;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card {
+      padding: 24px 19px;
+      background: white;
+      border: 1px solid #e2e8dd;
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px #1c302210;
+    }
+
+    .skill-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: #edf4e4;
+      color: var(--accent);
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .skill-card h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+      letter-spacing: -0.4px;
+    }
+
+    .skill-card p {
+      font-size: 12px;
+      color: var(--muted);
+      min-height: 68px;
+    }
+
+    .skill-card .tags {
+      gap: 5px;
+      margin-top: 16px;
+    }
+
+    .skill-card .tags span {
+      font-size: 9px;
+      padding: 5px 7px;
+    }
+
+    /* PROJECTS */
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      overflow: hidden;
+    }
+
+    .project-art {
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      min-height: 330px;
+      background: #e9f0df;
+    }
+
+    .terminal {
+      width: 100%;
+      max-width: 390px;
+      border-radius: 10px;
+      overflow: hidden;
+      color: #e8f0e8;
+      background: #17271f;
+      box-shadow: 0 20px 40px #1c30221c;
+    }
+
+    .terminal-head {
+      padding: 12px 15px;
+      background: #263b2e;
+      color: #b8cabb;
+      font: 11px monospace;
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font: 12px/2 monospace;
+    }
+
+    .terminal-body .ok {
+      color: #b9e87a;
+    }
+
+    .project-info {
+      align-self: center;
+      padding: 38px;
+    }
+
+    .project-type {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .project-info h3 {
+      font-size: 29px;
+      margin-bottom: 18px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    /* EDUCATION */
+    .education-section {
+      background: #eff3e9;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline {
+      max-width: 780px;
+      margin-left: auto;
+      padding-left: 28px;
+      border-left: 1px solid #cbd8c0;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 35px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #91b865;
+      border: 3px solid #eff3e9;
+      outline: 1px solid #91b865;
+      border-radius: 50%;
+      top: 5px;
+      left: -34px;
+    }
+
+    .timeline-status {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    .timeline-item h3 {
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    .institution {
+      font-weight: bold;
+      color: #405344 !important;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* LANGUAGES */
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .extra-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      padding: 28px;
+    }
+
+    .extra-card h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .language-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-top: 1px solid #edf0e9;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .language-level {
+      color: var(--accent);
+      font-size: 11px;
+    }
+
+    .approach-text {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--dark);
+      color: white;
+      padding: 85px 0;
+    }
+
+    .contact-section .eyebrow {
+      color: var(--green);
+    }
+
+    .contact-section h2 {
+      font-size: clamp(35px, 4.5vw, 55px);
+    }
+
+    .contact-section h2 span {
+      color: var(--green);
+    }
+
+    .contact-description {
+      color: #bdc9bf;
+      max-width: 500px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 35px;
+      margin-top: 35px;
+      border-top: 1px solid #3a4b3e;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 18px 0;
+      border-bottom: 1px solid #3a4b3e;
+      overflow-wrap: anywhere;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: var(--green);
+    }
+
+    .contact-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #a7b9a9;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #101b15;
+      color: white;
+      padding: 25px 0 18px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: #a1b0a4;
+    }
+
+    .back-top {
+      color: #d2dfd2;
+      font-size: 12px;
+    }
+
+    .copyright {
+      color: #93a397;
+      font-size: 10px;
+      margin-top: 22px;
+      padding-top: 15px;
+      border-top: 1px solid #2b3b30;
+    }
+
+    /* TABLET */
+    @media (max-width: 900px) {
+      .hero {
+        gap: 25px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fact {
+        padding-inline: 9px;
+      }
+
+      .fact-text {
+        font-size: 10px;
+      }
+
+      .project-info {
+        padding: 25px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 650px) {
+      .container {
+        width: 90%;
+      }
+
+      nav {
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 38px;
+        padding-bottom: 55px;
+        gap: 15px;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+        grid-row: 1;
+      }
+
+      .visual-circle {
+        height: 235px;
+        width: 235px;
+      }
+
+      .code-window {
+        width: 95%;
+      }
+
+      .floating-label {
+        font-size: 12px;
+        padding: 9px 11px;
+      }
+
+      .label-one {
+        top: 10px;
+      }
+
+      .label-two {
+        bottom: 4px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .facts-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .fact {
+        padding: 12px 7px;
+        border-bottom: 1px solid #d8e0d2;
+      }
+
+      .fact:first-child {
+        padding-left: 7px;
+      }
+
+      .fact:nth-child(2) {
+        border-right: none;
+      }
+
+      .fact:nth-child(n+3) {
+        border-bottom: none;
+      }
+
+      .section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .skill-card {
+        padding: 17px 13px;
+      }
+
+      .skill-card h3 {
+        font-size: 15px;
+      }
+
+      .skill-card p {
+        font-size: 11px;
+        min-height: 90px;
+      }
+
+      .skill-card .tags span {
+        font-size: 8px;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-art {
+        min-height: 245px;
+        padding: 20px;
+      }
+
+      .project-info {
+        padding: 25px 22px;
+      }
+
+      .project-info h3 {
+        font-size: 25px;
+      }
+
+      .timeline {
+        margin-left: 7px;
+      }
+
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .extra-card {
+        padding: 23px;
+      }
+
+      .contact-section {
+        padding: 65px 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      h1 {
+        font-size: 37px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-card p {
+        min-height: auto;
+      }
+
+      .fact-text {
+        font-size: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">
+        <span class="logo-box">SK</span>
+        Sherish Khalid
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="contact-nav">Contact ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="hero container" id="home">
+      <div>
+        <p class="eyebrow"><span>●</span> COMPUTER SCIENCE STUDENT</p>
+
+        <h1>
+          Hi, I'm<br>
+          <span class="name">Sherish Khalid.</span><br>
+          I build <span class="highlight">ideas.</span>
+        </h1>
+
+        <p class="hero-description">
+          An ambitious Computer Science undergraduate at Superior
+          University, Lahore, interested in programming, web development,
+          analytical thinking, and practical software solutions.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">Explore My Projects ↘</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+
+        <p class="small-note">
+          Curious mind · Continuous learner · Future software developer
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-circle"></div>
+
+        <div class="code-window">
+          <div class="window-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="file-name">hello_world.cpp</span>
+          </div>
+
+          <div class="code-lines">
+            <p><span class="line-number">01</span><span class="purple">#include</span> <span class="lime">&lt;iostream&gt;</span></p>
+            <p><span class="line-number">02</span></p>
+            <p><span class="line-number">03</span><span class="purple">int</span> main() {</p>
+            <p><span class="line-number">04</span>&nbsp;&nbsp;std::cout &lt;&lt;</p>
+            <p><span class="line-number">05</span>&nbsp;&nbsp;<span class="yellow">"Hello, world!"</span>;</p>
+            <p><span class="line-number">06</span>&nbsp;&nbsp;<span class="purple">return</span> 0;</p>
+            <p><span class="line-number">07</span>}</p>
+          </div>
+
+          <div class="window-footer">● Always learning something new</div>
+        </div>
+
+        <div class="floating-label label-one">&lt;/&gt; Code</div>
+        <div class="floating-label label-two">Problem Solver</div>
+      </div>
+    </section>
+
+    <!-- QUICK FACTS -->
+    <section class="facts">
+      <div class="container facts-grid">
+        <div class="fact">
+          <span class="fact-number">01</span>
+          <span class="fact-text">Computer Science</span>
+        </div>
+        <div class="fact">
+          <span class="fact-number">02</span>
+          <span class="fact-text">Programming</span>
+        </div>
+        <div class="fact">
+          <span class="fact-number">03</span>
+          <span class="fact-text">Web Development</span>
+        </div>
+        <div class="fact">
+          <span class="fact-number">04</span>
+          <span class="fact-text">Creative Skills</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">01 / ABOUT ME</p>
+          <h2>Learning today.<br><span>Building tomorrow.</span></h2>
+        </div>
+
+        <div class="about-content">
+          <p class="lead">
+            I am a Computer Science student at Superior University,
+            Lahore, developing a strong foundation in programming
+            and web technologies.
+          </p>
+
+          <p>
+            My technical interests include C++, Python, HTML5, CSS3,
+            Node.js, and React.js. I enjoy exploring how software works,
+            solving problems, and learning new technologies.
+          </p>
+
+          <p>
+            I aim to improve through hands-on projects, creativity,
+            analytical thinking, and consistent practice.
+          </p>
+
+          <div class="tags">
+            <span>Problem-solving</span>
+            <span>Analytical thinking</span>
+            <span>Creativity</span>
+            <span>Continuous learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills-section" id="skills">
+      <div class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">02 / MY TOOLKIT</p>
+          <h2>Skills &amp; <span>Technologies.</span></h2>
+          <p class="section-intro">
+            Technologies, developer tools, and creative skills
+            from my academic and practical learning.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon">C++</div>
+            <h3>Programming</h3>
+            <p>Programming fundamentals, logical thinking, and problem-solving.</p>
+            <div class="tags">
+              <span>C++</span>
+              <span>Python</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>Web Technologies</h3>
+            <p>Learning and building websites with front-end and server-side technologies.</p>
+            <div class="tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Node.js</span>
+              <span>React.js</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">⚙</div>
+            <h3>Developer Tools</h3>
+            <p>Tools for code editing, version control, and programming practice.</p>
+            <div class="tags">
+              <span>VS Code</span>
+              <span>GitHub</span>
+              <span>Programiz</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">✦</div>
+            <h3>Creative Skills</h3>
+            <p>Creative communication and digital media skills alongside technical learning.</p>
+            <div class="tags">
+              <span>Video Editing</span>
+              <span>Graphic Design</span>
+              <span>Content Writing</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section container" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">03 / MY WORK</p>
+        <h2>Projects &amp; <span>Practice.</span></h2>
+        <p class="section-intro">
+          An academic project demonstrating my programming
+          and code-analysis learning.
+        </p>
+      </div>
+
+      <article class="project-card">
+        <div class="project-art">
+          <div class="terminal">
+            <div class="terminal-head">● ● ● &nbsp; cpp_debugger</div>
+            <div class="terminal-body">
+              <p>$ ./analyze_code.cpp</p>
+              <p>Scanning code structure...</p>
+              <p class="ok">✓ Syntax checks</p>
+              <p class="ok">✓ Logic analysis</p>
+              <p class="ok">✓ Error detection</p>
+              <p>$ _</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <p class="project-type">C++ PROJECT</p>
+          <h3>C++ Debugging System</h3>
+
+          <p>
+            Developed an automated program to identify syntax,
+            execution, and logic errors in C++ code structures.
+          </p>
+
+          <p>
+            Implemented structured parsing algorithms to analyse
+            code and detect errors.
+          </p>
+
+          <div class="tags">
+            <span>C++</span>
+            <span>Parsing Algorithms</span>
+            <span>Error Detection</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education-section" id="education">
+      <div class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">04 / EDUCATION</p>
+          <h2>My learning <span>journey.</span></h2>
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-status">IN PROGRESS</p>
+            <h3>BS Computer Science (BSCS)</h3>
+            <p class="institution">Superior University, Lahore</p>
+            <p>
+              Focus on software engineering, programming paradigms,
+              data structures, and computer science fundamentals.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-status">COMPLETED</p>
+            <h3>FSc</h3>
+            <p class="institution">Intermediate Education</p>
+            <p>
+              Developed analytical, quantitative, and logical reasoning skills.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES AND APPROACH -->
+    <section class="section container">
+      <div class="extra-grid">
+
+        <div class="extra-card">
+          <p class="eyebrow">LANGUAGES</p>
+          <h3>Communication</h3>
+
+          <div class="language-row">
+            <span>Urdu</span>
+            <span class="language-level">Native</span>
+          </div>
+
+          <div class="language-row">
+            <span>English</span>
+            <span class="language-level">Fluent</span>
+          </div>
+        </div>
+
+        <div class="extra-card">
+          <p class="eyebrow">MY APPROACH</p>
+          <h3>Always learning.</h3>
+          <p class="approach-text">
+            I value curiosity, creativity, structured thinking,
+            and learning by doing. My goal is to keep developing
+            technical skills through practice and meaningful projects.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <p class="eyebrow">05 / CONTACT ME</p>
+        <h2>Let's connect and<br><span>build something useful.</span></h2>
+
+        <p class="contact-description">
+          Interested in technology, learning, or project collaborations?
+          Contact me through the details below.
+        </p>
+
+        <div class="contact-grid">
+
+          <a class="contact-item" href="mailto:Sherishkhalid15@gmail.com">
+            <span class="contact-label">EMAIL</span>
+            <span>Sherishkhalid15@gmail.com ↗</span>
+          </a>
+
+          <a class="contact-item" href="tel:03136584847">
+            <span class="contact-label">PHONE</span>
+            <span>0313-6584847 ↗</span>
+          </a>
+
+          <a
+            class="contact-item"
+            href="https://www.linkedin.com/in/sherish-khalid-97b155329"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-label">LINKEDIN</span>
+            <span>View LinkedIn Profile ↗</span>
+          </a>
+
+          <a
+            class="contact-item"
+            href="https://github.com/sherishkhalid15-max"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-label">GITHUB</span>
+            <span>Explore GitHub ↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="#home">
+          <span class="logo-box">SK</span>
+          Sherish Khalid
+        </a>
+
+        <p class="footer-note">Designed with curiosity and code.</p>
+        <a href="#home" class="back-top">Back to top ↑</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 Sherish Khalid. Portfolio based on CV information.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
